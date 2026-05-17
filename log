@@ -6,3 +6,26 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Sun May 17 11:08:37 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:52:47: error: invalid use of void expression
+   52 |     MapPair* aux = map_search(g->adjacencyMap,(void)label1);
+      |                                               ^~~~~~~~~~~~
+graph.c:54:19: error: invalid initializer
+   54 |     Edge prueba = list_first(aux->value);
+      |                   ^~~~~~~~~~
+graph.c:55:18: error: invalid operands to binary != (have ‘Edge’ and ‘void *’)
+   55 |     while(prueba != NULL){
+      |                  ^~
+graph.c:56:34: error: invalid type argument of ‘->’ (have ‘Edge’)
+   56 |         if(is_equal_string(prueba->target,(void* )label2)) return prueba->weight;
+      |                                  ^~
+graph.c:56:73: error: invalid type argument of ‘->’ (have ‘Edge’)
+   56 |         if(is_equal_string(prueba->target,(void* )label2)) return prueba->weight;
+      |                                                                         ^~
+graph.c:57:18: error: incompatible types when assigning to type ‘Edge’ from type ‘void *’
+   57 |         prueba = list_next(aux->value);
+      |                  ^~~~~~~~~
+c68ac87
