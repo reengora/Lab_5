@@ -40,7 +40,7 @@ void addNode(Graph* g, const char* label) {
     MapPair* aux = map_search(g->adjacencyMap,(void*)label);
     if( aux != NULL)return;
     
-    char* copia =(char*)malloc(sizeof(strlen(label)+1));
+    char* copia =(char*)malloc(strlen(label)+1);
     strcpy(copia,label);
     
     List* edges = list_create();
