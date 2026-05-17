@@ -91,3 +91,19 @@ Sun May 17 11:42:02 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 2d39381
+Sun May 17 11:51:13 PM UTC 2026: 
+ graph.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:40:31: error: passing argument 1 of ‘map_search’ from incompatible pointer type [-Wincompatible-pointer-types]
+   40 |     MapPair* aux = map_search(g,(void*)label);
+      |                               ^
+      |                               |
+      |                               Graph *
+In file included from graph.c:8:
+map.h:22:26: note: expected ‘Map *’ but argument is of type ‘Graph *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                     ~~~~~^~~
+188d36a
