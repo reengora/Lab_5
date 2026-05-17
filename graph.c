@@ -32,15 +32,15 @@ Graph* createGraph() {
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
-    addNode(g,label);
 
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
     MapPair* aux = map_search(g->adjacencyMap, (void*)src);
+    if(aux == NULL)return;
     Edge* nuevo = (Edge*)malloc(sizeof(Edge));
-    nuevo->target = dest;
+    strcpy(nuevo->target, dest);
     nuevo->weight = weight;
     list_pushBack(aux->value,(void*)nuevo);
 
