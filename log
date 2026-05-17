@@ -57,3 +57,14 @@ Sun May 17 11:33:40 PM UTC 2026:
  tests:  2|4
 ========================================
 d9520ea
+Sun May 17 11:35:37 PM UTC 2026: 
+ graph.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:52:55: error: ‘src’ undeclared (first use in this function)
+   52 |     MapPair* aux = map_search(g->adjacencyMap, (void*)src);
+      |                                                       ^~~
+graph.c:52:55: note: each undeclared identifier is reported only once for each function it appears in
+51c8474
