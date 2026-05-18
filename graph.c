@@ -95,8 +95,13 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     List* lista = list_create();
     Edge* edge = list_first(aux->value);
     while(edge != NULL){
-        list_pushBack(lista,edge->target);
+        char* copia = (char*) malloc(strlen(edge->target)+1);
+        strcpy(copia,edge->target);
+        list_pushBack(lista,(void*)copia);
+
+        edge = list_next(aux->value);
     }
+    if(lista != NULL)return lista;
     
 
 
