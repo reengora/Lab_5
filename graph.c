@@ -90,6 +90,14 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
 // Retorna una nueva List* que contiene elementos de tipo char* (las etiquetas)
 List* getAdjacentLabels(Graph* g, const char* label) {
     if (!g || !label) return NULL;
+    MapPair* aux = map_search(g->adjacencyMap, (void*)label);
+    if(aux == NULL)return NULL;
+    List* lista = list_create();
+    Edge* edge = list_first(aux->value);
+    while(edge != NULL){
+        list_pushBack(lista,edge->target);
+    }
+    
 
 
     return NULL; 
